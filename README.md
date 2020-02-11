@@ -9,7 +9,7 @@ compara uma hash informada com a hash do arquivo informado.
 `cd chf`
 
 ### intalação de dependencias
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ## Uso
 `python chf.py -ht <hash type> -f <file> -oh <orginal hash>`
