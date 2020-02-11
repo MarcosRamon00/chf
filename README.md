@@ -8,7 +8,7 @@ compara uma hash informada com a hash do arquivo informado.
 
 `cd chf`
 
-## Instalação
+### intalação de dependencias
 pip install -r requirements.txt
 
 ## Uso
