@@ -1,2 +1,5 @@
-*/__pycache/
-*/__init__.py
+__pycache/
+__init__.py
+__init__*
+*cpython*
+.venv
