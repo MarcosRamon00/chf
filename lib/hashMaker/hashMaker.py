@@ -1,9 +1,6 @@
 import hashlib # usado para hash de file
 
 
-#codigos usado para gerar hash do file
-#https://stackoverflow.com/questions/22058048/hashing-a-file-in-python
-
 ##==========constantes
 global BUF_SIZE
 BUF_SIZE = 65536 #64Kb
