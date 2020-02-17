@@ -14,9 +14,13 @@ def main():
     """
     #parametros gerais do programa
     parser = ArgumentParser(
-        prog='checkHashFile',
-        description='software para verificar hash de file.',
-        usage="python checkHashFile.py -ht <hash type> -f <file> -oh <orginal hash>"
+        prog='chf',
+        description='software para verificar hash de arquivo.',
+        usage="""
+            python3 chf.py -ht <hash type> -f  <file> -oh  <orginal hash>
+            or
+            python3 chf.py --hashType <hash type> --file <file> --originalHash <original hash>
+        """
     )
 
     #parametros essenciais para o programa
