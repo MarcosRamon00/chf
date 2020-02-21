@@ -22,6 +22,8 @@ def main():
             python3 chf.py --hashType <hash type> --file <file> --originalHash <original hash>
         """
     )
+    #mostra mensagem de ajuda
+    parser.print_help()
 
     #parametros essenciais para o programa
     parser.add_argument(
@@ -52,6 +54,14 @@ def main():
         dest='originalHash'
     )
    
+   # parametros opcionais
+    parser.add_argument(
+        '-v','--verbose',
+        required=False,
+        dest='isVerbose'
+   )
+
+   # verificar se argumentos obrigatorios estao vazios
     args = parser.parse_args()
     if args.hashType != None:
         hashType = args.hashType
