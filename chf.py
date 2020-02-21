@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # pacotes/modulos de terceiros
 from argparse import ArgumentParser
 
