@@ -17,11 +17,17 @@ def retornarHashArquivo(hashFile,file) -> str:
         return hashMaker.retornarHashMd5(file)
 
 #compara hashs do arquivo original e o hash informado
-def comparar_hashs(orignalHash,hashFile) -> None:
+def comparar_hashs(originalHash,hashFile,isVerbose=False) -> None:
     """
         verifica se hashs informados sao iguais ou diferentes.
     """
-    if hashFile == orignalHash:
-        print("---hashs iguais [OK]")
+    if isVerbose == False:
+        if hashFile == originalHash:
+            print("---hashs iguais [OK]")
+        else:
+            print("--hashs diferentes [!!!]")
     else:
-        print("--hashs diferentes [!!!]")
+        if hashFile == originalHash:
+            print("com verbose")
+        else:
+            print("com verbose")
