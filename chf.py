@@ -58,6 +58,7 @@ def main():
    # parametros opcionais
     parser.add_argument(
         '-v','--verbose',
+        type=bool,
         required=False,
         dest='isVerbose'
    )
