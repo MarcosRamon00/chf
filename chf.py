@@ -18,13 +18,11 @@ def main():
         prog='chf',
         description='software para verificar hash de arquivo.',
         usage="""
-            python3 chf.py -ht <hash type> -f  <file> -oh  <orginal hash>
+            python3 chf.py -ht <hash type> -f  <file> -oh  <original hash>
             or
             python3 chf.py --hashType <hash type> --file <file> --originalHash <original hash>
         """
     )
-    #mostra mensagem de ajuda
-    parser.print_help()
 
     #parametros essenciais para o programa
     parser.add_argument(
@@ -46,6 +44,7 @@ def main():
         dest='file'
     )
 
+ 
     parser.add_argument(
         '-oh','--originalHash',
         type=str,
@@ -58,30 +57,49 @@ def main():
    # parametros opcionais
     parser.add_argument(
         '-v','--verbose',
-        type=bool,
         required=False,
-        dest='isVerbose'
+        help='mostra mais informacoes sobre a comparacao dos hashs',
+        dest='isVerbose',
+        action="store_true"
    )
+
+    parser.add_argument(
+        '-bs','--buffersize',
+        required=False,
+        type=int,
+        help='customizar tamanho do buffer de hash',
+        dest='buffersize',
+        action="store"
+    )
+
 
    # verificar se argumentos obrigatorios estao vazios
     args = parser.parse_args()
-    if args.hashType != None:
+    if args.hashType:
         hashType = args.hashType
-    if args.file != None:
+    if args.file:
         file = args.file 
-    if args.originalHash != None:
+    if args.originalHash:
         originalHash = args.originalHash
-    
+    if args.buffersize:
+        bufferSize = args.buffersize
+    else:
+        bufferSize = 65444
+    if args.isVerbose:
+       isVerbose = args.isVerbose
+    else:
+        isVerbose = False
+
 #verifica hash de arquivo
     dataFile = checkFile.verificaArquivo(file)#verifica file
     while dataFile == False:#pede file ate que seja valido
         file = str(input("arquivo para ser verificado: "))
         dataFile = checkFile.verificaArquivo(file)
 
-    print("aguarde, verificando...")
-    hashFile = hashManeger.retornarHashArquivo(hashType,dataFile)
+    message.verificando()
+    hashFile = hashManeger.retornarHashArquivo(hashType,dataFile,bufferSize)
     dataFile.close()
-    hashManeger.comparar_hashs(originalHash,hashFile)
+    hashManeger.comparar_hashs(originalHash,hashFile,isVerbose)
     
 #execucao main
 if (__name__ == "__main__"):

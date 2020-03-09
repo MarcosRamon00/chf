@@ -13,4 +13,4 @@ def verificaArquivo(arquivo):#verifica erro na abertura de arquivo
         print("[ERRO]:  ARQUIVO NÃO PODE SER ABERTO ")
         print("ERRO:", erro)
         return False
-
+   
