@@ -16,7 +16,7 @@ def main():
     #parametros gerais do programa
     parser = ArgumentParser(
         prog='chf',
-        description='software para verificar hash de arquivo.',
+        description='software para comparar hash de arquivo.',
         usage="""
             python3 chf.py <hash type> <file> <original hash>
         """
