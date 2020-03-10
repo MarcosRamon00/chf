@@ -17,11 +17,9 @@ def retornarHashMd5(file,buffersize):#devolve hash md5 de file informado
     """
         retorna o hash md5 do file informado.
     """
-    print(escolheBuffer(buffersize))
     hashFile = hashlib.md5()
     while True:
         data = file.read(escolheBuffer(buffersize))
-        print(escolheBuffer(buffersize))
         if not data:
             break
         hashFile.update(data)
