@@ -25,33 +25,23 @@ def main():
     )
 
     #parametros essenciais para o programa
-    parser.add_argument(
-        '-ht','--hashType',
-        action='store',
+    parser.add_argument('hashType',
+        metavar='HT',
         type=str,
         help='tipo de hash',
-        choices=['md5','sha256','sha512'],
-        required=True,
-        dest='hashType'
+        choices=['md5','sha256','sha512']
     )
 
-    parser.add_argument(
-        '-f','--file',
-        action='store',
+    parser.add_argument('file',
+        metavar='F',
         type=str,
-        help='localizacao do arquivo',
-        required=True,
-        dest='file'
+        help='localizacao do arquivo'
     )
 
- 
-    parser.add_argument(
-        '-oh','--originalHash',
+    parser.add_argument('originalHash',
+        metavar='OH',
         type=str,
-        action='store',
-        help='hash original para ser comparada',
-        required=True,
-        dest='originalHash'
+        help='hash original para ser comparada'
     )
    
    # parametros opcionais
