@@ -13,7 +13,7 @@ def main():
     """
         funcao principal do programa, checa o hash informado com o hash do file informado.
     """
-    #parametros gerais do programa
+#parametros gerais do programa
     parser = ArgumentParser(
         prog='chf',
         description='software para comparar hash de arquivo.',
@@ -22,7 +22,7 @@ def main():
         """
     )
 
-    #parametros essenciais para o programa
+#parametros essenciais para o programa
     parser.add_argument('hashType',
         metavar='HT',
         type=str,
@@ -42,7 +42,7 @@ def main():
         help='hash original para ser comparada'
     )
    
-   # parametros opcionais
+# parametros opcionais
     parser.add_argument(
         '-v','--verbose',
         required=False,
@@ -61,7 +61,7 @@ def main():
     )
 
 
-   # verificar se argumentos obrigatorios estao vazios
+# verificar se argumentos obrigatorios estao vazios
     args = parser.parse_args()
     if args.hashType:
         hashType = args.hashType
