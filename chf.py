@@ -18,9 +18,7 @@ def main():
         prog='chf',
         description='software para verificar hash de arquivo.',
         usage="""
-            python3 chf.py -ht <hash type> -f  <file> -oh  <original hash>
-            or
-            python3 chf.py --hashType <hash type> --file <file> --originalHash <original hash>
+            python3 chf.py <hash type> <file> <original hash>
         """
     )
 
