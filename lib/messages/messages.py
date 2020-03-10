@@ -17,8 +17,8 @@ def infoComparacaohashs(hashsSaoIguais,originalHash,hashFile,isVerbose=False) ->
         print("---> hashs diferentes")
 
     if isVerbose:
-        print("hash original:",originalHash)
-        print("hash do arquivo: ",hashFile)
+        print("hash original  : {0}".format(originalHash))
+        print("hash do arquivo: {0}".format(hashFile))
 
 
 def verificando() -> None:
