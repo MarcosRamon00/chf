@@ -11,15 +11,19 @@ def showBanner() -> None:
  ''')
 
 def infoComparacaohashs(hashsSaoIguais,originalHash,hashFile,isVerbose=False) -> None:
+    from colorama import init,Fore,Back,Style
+
+    init()
     if hashsSaoIguais:
-        print("---> hashs iguais")
+        print(Fore.GREEN + '---> hashs iguais')
     else:
-        print("---> hashs diferentes")
+        print(Fore.RED + '---> hashs diferentes')
 
     if isVerbose:
-        print("hash original  : {0}".format(originalHash))
-        print("hash do arquivo: {0}".format(hashFile))
+        print(Fore.GREEN + "hash original  : {0}".format(originalHash))
+        print(Fore.GREEN + "hash do arquivo: {0}".format(hashFile))
 
+    print(Style.RESET_ALL)
 
 def verificando() -> None:
     print("verificando ...")
