@@ -20,8 +20,8 @@ def infoComparacaohashs(hashsSaoIguais,originalHash,hashFile,isVerbose=False) ->
         print(Fore.RED + '---> hashs diferentes')
 
     if isVerbose:
-        print(Fore.GREEN + "hash original  : {0}".format(originalHash))
-        print(Fore.GREEN + "hash do arquivo: {0}".format(hashFile))
+        print(Fore.WHITE + "hash original  : {0}".format(originalHash))
+        print(Fore.WHITE + "hash do arquivo: {0}".format(hashFile))
 
     print(Style.RESET_ALL)
 
