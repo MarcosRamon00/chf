@@ -91,5 +91,14 @@ def main():
     
 #execucao main
 if (__name__ == "__main__"):
-    message.showBanner()
-    main()
+    try:
+        import colorama
+        try:
+            message.showBanner()
+            main()
+        except:
+            print("nao foi possivel iniciar o programa")
+    except:
+        print("faltam pacotes")
+        print("use: pip install -r requirements.txt")
+        
