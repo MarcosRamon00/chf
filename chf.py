@@ -108,9 +108,10 @@ if (__name__ == "__main__"):
         try:
             message.showBanner()
             main()
-        except:
+        except RuntimeError:
             print("nao foi possivel iniciar o programa")
-    except:
-        print("faltam pacotes")
+    except ModuleNotFoundError as err:
+        print("faltam pacotes:")
+        print("pacotes: {0}".format(err))
         print("use: pip install -r requirements.txt")
         
