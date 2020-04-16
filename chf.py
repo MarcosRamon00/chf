@@ -8,12 +8,14 @@ import lib.messages.messages as message
 import lib.checkFile.checkFile as checkFile
 
 
-#funcao principal
+# funcao principal
+
+
 def main():
     """
         funcao principal do programa, checa o hash informado com o hash do file informado.
     """
-#parametros gerais do programa
+# parametros gerais do programa
     parser = ArgumentParser(
         prog='chf',
         description='software para comparar hash de arquivo.',
@@ -22,21 +24,24 @@ def main():
         """
     )
 
-#parametros essenciais para o programa
-    parser.add_argument('hashType',
+# parametros essenciais para o programa
+    parser.add_argument(
+        'hashType',
         metavar='HT',
         type=str,
         help='tipo de hash',
-        choices=['md5','sha256','sha512']
+        choices=['md5', 'sha256', 'sha512']
     )
 
-    parser.add_argument('file',
+    parser.add_argument(
+        'file',
         metavar='F',
         type=str,
         help='localizacao do arquivo'
     )
 
-    parser.add_argument('originalHash',
+    parser.add_argument(
+        'originalHash',
         metavar='OH',
         type=str,
         help='hash original para ser comparada'
@@ -44,7 +49,7 @@ def main():
    
 # parametros opcionais
     parser.add_argument(
-        '-v','--verbose',
+        '-v', '--verbose',
         required=False,
         help='mostra mais informacoes sobre a comparacao dos hashs',
         dest='isVerbose',
@@ -52,7 +57,7 @@ def main():
    )
 
     parser.add_argument(
-        '-bs','--buffersize',
+        '-bs', '--buffersize',
         required=False,
         type=int,
         help='customizar tamanho do buffer de hash',
@@ -63,33 +68,40 @@ def main():
 
 # verificar se argumentos obrigatorios estao vazios
     args = parser.parse_args()
+    
     if args.hashType:
         hashType = args.hashType
+    
     if args.file:
-        file = args.file 
+        file = args.file
+    
     if args.originalHash:
         originalHash = args.originalHash
+    
     if args.buffersize:
         bufferSize = args.buffersize
     else:
         bufferSize = 65444
+
     if args.isVerbose:
-       isVerbose = args.isVerbose
+        isVerbose = args.isVerbose
     else:
         isVerbose = False
 
-#verifica hash de arquivo
-    dataFile = checkFile.verificaArquivo(file)#verifica file
-    while dataFile == False:#pede file ate que seja valido
+# verifica hash de arquivo
+    dataFile = checkFile.verificaArquivo(file) # verifica file
+    while dataFile == False: # pede file ate que seja valido
         file = str(input("arquivo para ser verificado: "))
         dataFile = checkFile.verificaArquivo(file)
 
     message.verificando()
-    hashFile = hashManeger.retornarHashArquivo(hashType,dataFile,bufferSize)
+    hashFile = hashManeger.retornarHashArquivo(hashType, dataFile, bufferSize)
     dataFile.close()
-    hashManeger.comparar_hashs(originalHash,hashFile,isVerbose)
-    
-#execucao main
+    hashManeger.comparar_hashs(originalHash, hashFile, isVerbose)
+  
+# execucao main
+
+
 if (__name__ == "__main__"):
     try:
         import colorama
