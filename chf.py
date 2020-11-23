@@ -29,8 +29,8 @@ def main():
         'hashType',
         metavar='HT',
         type=str,
-        help='tipo de hash',
-        choices=['md5', 'sha256', 'sha512']
+        help='tipo de hash: md5, sha256, sha512',
+        choices=['md5','sha256','sha512']
     )
 
     parser.add_argument(
