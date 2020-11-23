@@ -90,10 +90,6 @@ def main():
 
 # verifica hash de arquivo
     dataFile = checkFile.verificaArquivo(file) # verifica file
-    while dataFile == False: # pede file ate que seja valido
-        file = str(input("arquivo para ser verificado: "))
-        dataFile = checkFile.verificaArquivo(file)
-
     message.verificando()
     hashFile = hashManeger.retornarHashArquivo(hashType, dataFile, bufferSize)
     dataFile.close()

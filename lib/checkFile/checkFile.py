@@ -8,9 +8,9 @@ def verificaArquivo(arquivo):#verifica erro na abertura de arquivo
     except FileNotFoundError as erro:
         print("[ERRO]: ARQUIVO NÃO ENCONTRADO")
         print("ERRO:", erro)
-        return False
+        exit()
     except Exception as erro:
         print("[ERRO]:  ARQUIVO NÃO PODE SER ABERTO ")
         print("ERRO:", erro)
-        return False
+        exit()
    
